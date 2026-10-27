@@ -1,0 +1,293 @@
+/* ==============================
+   1. CÀI ĐẶT CHUNG
+============================== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: #fff8fc;
+  color: #333;
+  line-height: 1.6;
+}
+
+/* ==============================
+   2. THANH ĐIỀU HƯỚNG
+============================== */
+header {
+  background: linear-gradient(135deg, #e84393, #a855f7);
+  color: white;
+  padding: 18px 5%;
+  box-shadow: 0 3px 12px rgba(0, 0, 0, 0.1);
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 15px;
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+  margin: 0 10px;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+nav a:hover {
+  color: #ffe0f0;
+}
+
+/* ==============================
+   3. NÚT BẤM
+============================== */
+button,
+.btn {
+  background: #e84393;
+  color: white;
+  border: none;
+  padding: 11px 20px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 15px;
+  transition: 0.3s;
+}
+
+button:hover,
+.btn:hover {
+  background: #c02675;
+  transform: translateY(-2px);
+}
+
+/* ==============================
+   4. CÁC TRANG HIỂN THỊ
+============================== */
+.trang {
+  display: none;
+  min-height: 70vh;
+  padding: 35px 5%;
+  animation: hienTrang 0.4s ease;
+}
+
+.trang.active {
+  display: block;
+}
+
+@keyframes hienTrang {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ==============================
+   5. TIÊU ĐỀ
+============================== */
+h1 {
+  color: #c02675;
+  margin-bottom: 20px;
+}
+
+h2 {
+  color: #a83279;
+  margin-bottom: 15px;
+}
+
+h3 {
+  margin-bottom: 10px;
+}
+
+p {
+  margin-bottom: 12px;
+}
+
+/* ==============================
+   6. DANH SÁCH PHIM
+============================== */
+.danh-sach-phim {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 25px;
+  margin-top: 25px;
+}
+
+.phim {
+  background: white;
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 4px 15px rgba(180, 60, 120, 0.12);
+  transition: 0.3s;
+}
+
+.phim:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 8px 22px rgba(180, 60, 120, 0.2);
+}
+
+.phim img {
+  width: 100%;
+  height: 260px;
+  object-fit: cover;
+}
+
+.phim .noi-dung {
+  padding: 16px;
+}
+
+.phim button {
+  width: 100%;
+  margin-top: 10px;
+}
+
+/* ==============================
+   7. FORM TÀI KHOẢN
+============================== */
+.hop-tai-khoan {
+  max-width: 450px;
+  margin: 25px auto;
+  padding: 30px;
+  background: white;
+  border-radius: 18px;
+  box-shadow: 0 5px 25px rgba(180, 60, 120, 0.12);
+}
+
+.nhan-nho {
+  color: #e84393;
+  font-size: 13px;
+  font-weight: bold;
+  letter-spacing: 1px;
+}
+
+input,
+select,
+textarea {
+  width: 100%;
+  padding: 12px;
+  margin: 8px 0 16px;
+  border: 1px solid #e5c6d8;
+  border-radius: 8px;
+  outline: none;
+  font-size: 15px;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+  border-color: #e84393;
+  box-shadow: 0 0 5px rgba(232, 67, 147, 0.2);
+}
+
+.hop-tai-khoan button {
+  width: 100%;
+}
+
+/* ==============================
+   8. KHU VỰC ĐẶT VÉ
+============================== */
+.khu-dat-ve {
+  max-width: 900px;
+  margin: 20px auto;
+  padding: 25px;
+  background: white;
+  border-radius: 15px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+}
+
+.danh-sach-ghe {
+  display: grid;
+  grid-template-columns: repeat(8, 1fr);
+  gap: 10px;
+  margin: 25px 0;
+}
+
+.ghe {
+  padding: 10px 5px;
+  background: #fce7f3;
+  color: #9d174d;
+  border-radius: 6px;
+  text-align: center;
+  cursor: pointer;
+}
+
+.ghe.da-chon {
+  background: #22c55e;
+  color: white;
+}
+
+.ghe.da-dat {
+  background: #999;
+  color: white;
+  cursor: not-allowed;
+}
+
+/* ==============================
+   9. CHÂN TRANG
+============================== */
+footer {
+  background: #30243a;
+  color: white;
+  text-align: center;
+  padding: 25px 15px;
+  margin-top: 40px;
+}
+
+/* ==============================
+   10. GIAO DIỆN ĐIỆN THOẠI
+============================== */
+@media (max-width: 768px) {
+  header {
+    padding: 15px;
+  }
+
+  nav {
+    flex-direction: column;
+  }
+
+  nav a {
+    display: inline-block;
+    margin: 5px;
+  }
+
+  .trang {
+    padding: 25px 15px;
+  }
+
+  .danh-sach-phim {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 12px;
+  }
+
+  .phim img {
+    height: 200px;
+  }
+
+  .danh-sach-ghe {
+    grid-template-columns: repeat(4, 1fr);
+    gap: 6px;
+  }
+
+  .hop-tai-khoan {
+    padding: 20px;
+  }
+}
+
+@media (max-width: 380px) {
+  .danh-sach-phim {
+    grid-template-columns: 1fr;
+  }
+}
